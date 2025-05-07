@@ -17,9 +17,9 @@ try:
     SERVICE_OPTIONS = encoders['service'].classes_.tolist()
     FLAG_OPTIONS = encoders['flag'].classes_.tolist()
 
-    print("✅ Model artifacts loaded successfully.")
+    print(" Model artifacts loaded successfully.")
 except Exception as e:
-    print("❌ Error loading model artifacts:", e)
+    print(" Error loading model artifacts:", e)
     raise
 
 # Start packet capture
@@ -55,9 +55,9 @@ def predict():
         X = np.array([data])
         X_scaled = scaler.transform(X)
         prediction = model.predict(X_scaled)[0]
-        result = "✅ DoS Attack Detected!" if prediction == 1 else "✅ Normal Traffic"
+        result = " DoS Attack Detected!" if prediction == 1 else " Normal Traffic"
     except Exception as e:
-        result = f"❌ Error: {str(e)}"
+        result = f" Error: {str(e)}"
 
     return render_template(
         'index.html',
