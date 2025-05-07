@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Visualizations</title>
+    <style>
+        /* Resetting default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            text-align: center;
+            padding: 50px 0;
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Title Styling */
+        h2 {
+            font-size: 2em;
+            color: #5a5a5a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+
+        h2:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        h2:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        /* Image Styling */
+        img {
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin: 30px 0;
+        }
+
+        /* Hover effect for images */
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Fade-in and slide-up animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Slide-up animation for headings */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 0;
+            }
+            img {
+                width: 100%;
+                max-width: 500px;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Heatmap</h2>
+    <img src="{{ url_for('static', filename='images/Screenshot (303).png') }}" alt="Heatmap" width="600">
+
+    <h2>Class Distribution</h2>
+    <img src="{{ url_for('static', filename='images/Screenshot (304).png') }}" alt="Class Distribution" width="600">
+
+</body>
+</html>
